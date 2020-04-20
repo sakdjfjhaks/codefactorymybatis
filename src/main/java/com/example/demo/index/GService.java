@@ -13,7 +13,8 @@ import java.io.FileWriter;
 import java.sql.*;
 import java.util.*;
 
-import static com.heyi.GUtils.*;
+import static com.example.demo.index.GUtils.*;
+
 
 /**
  * Created by codefactory on 2018/3/5.
