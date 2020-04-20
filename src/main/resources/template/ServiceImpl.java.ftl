@@ -1,5 +1,8 @@
 package ${basePackage};
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import java.util.List;
 /**
 * ${table.tableComment}(${table.tableNameUpperCamel})表服务实现类
 *
@@ -43,7 +46,7 @@ public class ${table.tableNameUpperCamel}ServiceImpl implements ${table.tableNam
     @Override
     public ${table.tableNameUpperCamel} add(${table.tableNameUpperCamel} ${table.tableNameLowerCamel}){
         this.dao.add(${table.tableNameLowerCamel});
-        return  this.getById((${table.tableNameLowerCamel}).get${'${key.columName}'?cap_first}());
+        return  this.getById(${table.tableNameLowerCamel}.get${table.tableNameUpperCamel}Id());
     }
 
 
@@ -68,7 +71,7 @@ public class ${table.tableNameUpperCamel}ServiceImpl implements ${table.tableNam
     @Override
     public ${table.tableNameUpperCamel} update(${table.tableNameUpperCamel} ${table.tableNameLowerCamel}){
         this.dao.update(${table.tableNameLowerCamel});
-        return this.getById(${table.tableNameLowerCamel} .get${'${key.columName}'?cap_first}());
+        return this.getById(${table.tableNameLowerCamel}.get${table.tableNameUpperCamel}Id());
     }
 
     /**
