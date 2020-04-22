@@ -56,7 +56,7 @@ public class ${table.tableNameUpperCamel}ServiceImpl implements ${table.tableNam
     * @return 实例对象
     */
     @Override
-    public ${table.tableNameUpperCamel} getById(Long ${table.tableNameLowerCamel}Id){
+    public ${table.tableNameUpperCamel} getById(Integer ${table.tableNameLowerCamel}Id){
         return this.dao.getById(${table.tableNameLowerCamel}Id);
     }
 
@@ -80,7 +80,7 @@ public class ${table.tableNameUpperCamel}ServiceImpl implements ${table.tableNam
     * @return 是否成功
     */
     @Override
-    public boolean deleteById(Long ${table.tableNameLowerCamel}Id){
+    public boolean deleteById(Integer ${table.tableNameLowerCamel}Id){
         return this.dao.deleteById(${table.tableNameLowerCamel}Id)>0;
     }
 

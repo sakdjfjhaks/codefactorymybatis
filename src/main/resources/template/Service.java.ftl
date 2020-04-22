@@ -30,7 +30,6 @@ public interface ${table.tableNameUpperCamel}Service {
     * 新增数据
     *
     * @param ${table.tableNameLowerCamel} 实例对象
-    * @param student    操作人
     * @return 实例对象
     */
     ${table.tableNameUpperCamel} add(${table.tableNameUpperCamel} ${table.tableNameLowerCamel} );
@@ -41,14 +40,13 @@ public interface ${table.tableNameUpperCamel}Service {
     * @param ${table.tableNameLowerCamel}Id 主键
     * @return 实例对象
     */
-    ${table.tableNameUpperCamel} getById(Long ${table.tableNameLowerCamel}Id);
+    ${table.tableNameUpperCamel} getById(Integer ${table.tableNameLowerCamel}Id);
 
 
     /**
     * 修改数据
     *
     * @param ${table.tableNameLowerCamel} 实例对象
-    * @param student    操作人
     * @return 实例对象
     */
     ${table.tableNameUpperCamel} update(${table.tableNameUpperCamel} ${table.tableNameLowerCamel});
@@ -59,6 +57,6 @@ public interface ${table.tableNameUpperCamel}Service {
     * @param ${table.tableNameLowerCamel}Id 主键
     * @return 是否成功
     */
-    boolean deleteById(Long ${table.tableNameLowerCamel}Id);
+    boolean deleteById(Integer ${table.tableNameLowerCamel}Id);
 
 }

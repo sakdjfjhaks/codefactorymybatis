@@ -42,7 +42,7 @@ public interface ${table.tableNameUpperCamel}Dao {
    * @param ${table.tableNameLowerCamel}Id 主键
    * @return 实例对象
    */
-   ${table.tableNameUpperCamel} getById(Long ${table.tableNameLowerCamel}Id);
+   ${table.tableNameUpperCamel} getById(Integer ${table.tableNameLowerCamel}Id);
 
    /**
    * 修改数据
@@ -58,5 +58,5 @@ public interface ${table.tableNameUpperCamel}Dao {
    * @param ${table.tableNameLowerCamel}Id 主键
    * @return 影响行数
    */
-   int deleteById(Long ${table.tableNameLowerCamel}Id);
+   int deleteById(Integer ${table.tableNameLowerCamel}Id);
 }
