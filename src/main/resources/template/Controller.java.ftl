@@ -55,7 +55,7 @@ public class ${table.tableNameUpperCamel}Controller {
     @ApiOperation(value = "详情", notes = "详情")
     @PostMapping("/detail")
     public BaseResponse detail(@RequestBody ${table.tableNameUpperCamel} ${table.tableNameLowerCamel}) {
-        ${table.tableNameUpperCamel} new${table.tableNameUpperCamel} = service.getById(${table.tableNameLowerCamel}.get${table.tableNameLowerCamel}Id());
+        ${table.tableNameUpperCamel} new${table.tableNameUpperCamel} = service.getById(${table.tableNameLowerCamel}.get${table.tableNameUpperCamel}Id());
         if (new${table.tableNameUpperCamel} != null) {
             return new BaseResponse(true, "查询成功", new${table.tableNameUpperCamel});
         } else {
@@ -73,7 +73,7 @@ public class ${table.tableNameUpperCamel}Controller {
     @ApiOperation(value = "删除", notes = "删除")
     @PostMapping("/delete")
     public BaseResponse delete(@RequestBody ${table.tableNameUpperCamel} ${table.tableNameLowerCamel}) {
-        service.deleteById(${table.tableNameLowerCamel}.get${table.tableNameLowerCamel}Id());
+        service.deleteById(${table.tableNameLowerCamel}.get${table.tableNameUpperCamel}Id());
         return new BaseResponse(true, "删除成功");
     }
 
