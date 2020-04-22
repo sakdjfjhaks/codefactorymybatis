@@ -40,7 +40,6 @@ public class ${table.tableNameUpperCamel}ServiceImpl implements ${table.tableNam
     * 新增数据
     *
     * @param ${table.tableNameLowerCamel} 实例对象
-    * @param student    操作人
     * @return 实例对象
     */
     @Override
