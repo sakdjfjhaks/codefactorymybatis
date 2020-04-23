@@ -1,18 +1,17 @@
 package ${basePackage};
 
 import com.github.pagehelper.Page;
-import ${basePackage}.${table.tableNameUpperCamel};
-import ${basePackage}.${table.tableNameUpperCamel}Service;
 
 import com.github.pagehelper.PageHelper;
 import com.study.springboot.baseclass.BaseResponse;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import javax.annotation.Resource;
 import java.util.List;
 /**
@@ -21,7 +20,7 @@ import java.util.List;
 * @author ${table.author}
 * @date  ${table.createTime}
 */
-@Controller
+@RestController
 @RequestMapping("/${table.tableNameLower}")
 @Api(value = "${table.tableComment}", tags = "${table.tableComment}操作接口")
 public class ${table.tableNameUpperCamel}Controller {
