@@ -1,15 +1,19 @@
 package ${basePackage};
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
-import ${basePackage}.${table.tableNameUpperCamel};
-
 /**
-* ${table.tableComment}(${table.tableNameUpperCamel})表服务接口
+* ${table.tableComment}(${table.tableNameUpperCamel})表服务实现类
 *
 * @author ${table.author}
 * @date  ${table.createTime}
 */
-public interface ${table.tableNameUpperCamel}Service {
+@Service
+public class ${table.tableNameUpperCamel}ServiceImpl implements ${table.tableNameUpperCamel}Service{
+
+    @Resource
+    private ${table.tableNameUpperCamel}Dao dao;
 
     /**
     * 查询多条数据
@@ -17,14 +21,18 @@ public interface ${table.tableNameUpperCamel}Service {
     * @param ${table.tableNameLowerCamel} 查询参数
     * @return 对象列表
     */
-    List<${table.tableNameUpperCamel}> pages(${table.tableNameUpperCamel} ${table.tableNameLowerCamel});
+public List<${table.tableNameUpperCamel}> pages(${table.tableNameUpperCamel} ${table.tableNameLowerCamel}){
+        return this.dao.pages(${table.tableNameLowerCamel});
+    }
 
     /**
     * 查询所有数据
     *
     * @return 对象列表
     */
-    List<${table.tableNameUpperCamel}> getAll();
+public List<${table.tableNameUpperCamel}> getAll(){
+        return this.dao.getAll();
+    }
 
     /**
     * 新增数据
@@ -32,7 +40,11 @@ public interface ${table.tableNameUpperCamel}Service {
     * @param ${table.tableNameLowerCamel} 实例对象
     * @return 实例对象
     */
-    ${table.tableNameUpperCamel} add(${table.tableNameUpperCamel} ${table.tableNameLowerCamel} );
+public ${table.tableNameUpperCamel} add(${table.tableNameUpperCamel} ${table.tableNameLowerCamel}){
+        this.dao.add(${table.tableNameLowerCamel});
+        return  this.getById(${table.tableNameLowerCamel}.get${table.tableNameUpperCamel}Id());
+    }
+
 
     /**
     * 通过ID查询单条数据
@@ -40,7 +52,9 @@ public interface ${table.tableNameUpperCamel}Service {
     * @param ${table.tableNameLowerCamel}Id 主键
     * @return 实例对象
     */
-    ${table.tableNameUpperCamel} getById(Integer ${table.tableNameLowerCamel}Id);
+public ${table.tableNameUpperCamel} getById(Integer ${table.tableNameLowerCamel}Id){
+        return this.dao.getById(${table.tableNameLowerCamel}Id);
+    }
 
 
     /**
@@ -49,7 +63,10 @@ public interface ${table.tableNameUpperCamel}Service {
     * @param ${table.tableNameLowerCamel} 实例对象
     * @return 实例对象
     */
-    ${table.tableNameUpperCamel} update(${table.tableNameUpperCamel} ${table.tableNameLowerCamel});
+public ${table.tableNameUpperCamel} update(${table.tableNameUpperCamel} ${table.tableNameLowerCamel}){
+        this.dao.update(${table.tableNameLowerCamel});
+        return this.getById(${table.tableNameLowerCamel}.get${table.tableNameUpperCamel}Id());
+    }
 
     /**
     * 通过主键删除数据
@@ -57,6 +74,8 @@ public interface ${table.tableNameUpperCamel}Service {
     * @param ${table.tableNameLowerCamel}Id 主键
     * @return 是否成功
     */
-    boolean deleteById(Integer ${table.tableNameLowerCamel}Id);
+public boolean deleteById(Integer ${table.tableNameLowerCamel}Id){
+        return this.dao.deleteById(${table.tableNameLowerCamel}Id)>0;
+    }
 
 }

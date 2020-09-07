@@ -12,11 +12,18 @@ import java.util.Date;
 * @author ${table.author}
 * @date  ${table.createTime}
 */
-@ApiModel(description = "${table.tableComment}")
 @Data
-public class ${table.tableNameUpperCamel}  extends BaseModel {
+public class ${table.tableNameUpperCamel} {
 <#list colums as colum>
-        @ApiModelProperty(value = "${colum.columComment}", name = "${colum.columNameLowerCamel}", example = "")
         private ${colum.javaType} ${colum.columNameLowerCamel};
+</#list>
+<#list colums as colum>
+        public ${colum.javaType} get${colum.columNameUpperCamel}() {
+                return id;
+        }
+
+        public void set${colum.columNameUpperCamel}(${colum.javaType} ${colum.columNameLowerCamel}) {
+                this.${colum.columNameLowerCamel} = ${colum.columNameLowerCamel};
+        }
 </#list>
 }
