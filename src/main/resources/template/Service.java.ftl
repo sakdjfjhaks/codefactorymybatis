@@ -10,7 +10,7 @@ import java.util.List;
 * @date  ${table.createTime}
 */
 @Service
-public class ${table.tableNameUpperCamel}ServiceImpl implements ${table.tableNameUpperCamel}Service{
+public class ${table.tableNameUpperCamel}Service {
 
     @Resource
     private ${table.tableNameUpperCamel}Dao dao;
@@ -21,7 +21,7 @@ public class ${table.tableNameUpperCamel}ServiceImpl implements ${table.tableNam
     * @param ${table.tableNameLowerCamel} 查询参数
     * @return 对象列表
     */
-public List<${table.tableNameUpperCamel}> pages(${table.tableNameUpperCamel} ${table.tableNameLowerCamel}){
+    public List<${table.tableNameUpperCamel}> pages(${table.tableNameUpperCamel} ${table.tableNameLowerCamel}){
         return this.dao.pages(${table.tableNameLowerCamel});
     }
 
@@ -30,7 +30,7 @@ public List<${table.tableNameUpperCamel}> pages(${table.tableNameUpperCamel} ${t
     *
     * @return 对象列表
     */
-public List<${table.tableNameUpperCamel}> getAll(){
+    public List<${table.tableNameUpperCamel}> getAll(){
         return this.dao.getAll();
     }
 
@@ -40,7 +40,7 @@ public List<${table.tableNameUpperCamel}> getAll(){
     * @param ${table.tableNameLowerCamel} 实例对象
     * @return 实例对象
     */
-public ${table.tableNameUpperCamel} add(${table.tableNameUpperCamel} ${table.tableNameLowerCamel}){
+    public ${table.tableNameUpperCamel} add(${table.tableNameUpperCamel} ${table.tableNameLowerCamel}){
         this.dao.add(${table.tableNameLowerCamel});
         return  this.getById(${table.tableNameLowerCamel}.get${table.tableNameUpperCamel}Id());
     }
@@ -52,7 +52,7 @@ public ${table.tableNameUpperCamel} add(${table.tableNameUpperCamel} ${table.tab
     * @param ${table.tableNameLowerCamel}Id 主键
     * @return 实例对象
     */
-public ${table.tableNameUpperCamel} getById(Integer ${table.tableNameLowerCamel}Id){
+    public ${table.tableNameUpperCamel} getById(Integer ${table.tableNameLowerCamel}Id){
         return this.dao.getById(${table.tableNameLowerCamel}Id);
     }
 
@@ -63,7 +63,7 @@ public ${table.tableNameUpperCamel} getById(Integer ${table.tableNameLowerCamel}
     * @param ${table.tableNameLowerCamel} 实例对象
     * @return 实例对象
     */
-public ${table.tableNameUpperCamel} update(${table.tableNameUpperCamel} ${table.tableNameLowerCamel}){
+    public ${table.tableNameUpperCamel} update(${table.tableNameUpperCamel} ${table.tableNameLowerCamel}){
         this.dao.update(${table.tableNameLowerCamel});
         return this.getById(${table.tableNameLowerCamel}.get${table.tableNameUpperCamel}Id());
     }
@@ -74,7 +74,7 @@ public ${table.tableNameUpperCamel} update(${table.tableNameUpperCamel} ${table.
     * @param ${table.tableNameLowerCamel}Id 主键
     * @return 是否成功
     */
-public boolean deleteById(Integer ${table.tableNameLowerCamel}Id){
+    public boolean deleteById(Integer ${table.tableNameLowerCamel}Id){
         return this.dao.deleteById(${table.tableNameLowerCamel}Id)>0;
     }
 
