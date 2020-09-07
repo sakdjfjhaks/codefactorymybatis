@@ -1,6 +1,7 @@
 package ${basePackage};
 import org.springframework.stereotype.Service;
-
+import java.util.Calendar;
+import com.study.practice.base.utils.SnowFlakeId;
 import javax.annotation.Resource;
 import java.util.List;
 /**
@@ -41,7 +42,7 @@ public class ${table.tableNameUpperCamel}Service {
     * @return 实例对象
     */
     public ${table.tableNameUpperCamel} add(${table.tableNameUpperCamel} ${table.tableNameLowerCamel}){
-        ${table.tableNameLowerCamel}.set${table.tableNameUpperCamel}Id()(SnowFlakeId.generateID());
+        ${table.tableNameLowerCamel}.set${table.tableNameUpperCamel}Id(SnowFlakeId.generateID());
         ${table.tableNameLowerCamel}.setCreateTime(Calendar.getInstance().getTime());
         this.dao.add(${table.tableNameLowerCamel});
         return  this.getById(${table.tableNameLowerCamel}.get${table.tableNameUpperCamel}Id());
@@ -54,7 +55,7 @@ public class ${table.tableNameUpperCamel}Service {
     * @param ${table.tableNameLowerCamel}Id 主键
     * @return 实例对象
     */
-    public ${table.tableNameUpperCamel} getById(Integer ${table.tableNameLowerCamel}Id){
+    public ${table.tableNameUpperCamel} getById(Long ${table.tableNameLowerCamel}Id){
         return this.dao.getById(${table.tableNameLowerCamel}Id);
     }
 
@@ -76,7 +77,7 @@ public class ${table.tableNameUpperCamel}Service {
     * @param ${table.tableNameLowerCamel}Id 主键
     * @return 是否成功
     */
-    public boolean deleteById(Integer ${table.tableNameLowerCamel}Id){
+    public boolean deleteById(Long ${table.tableNameLowerCamel}Id){
         return this.dao.deleteById(${table.tableNameLowerCamel}Id)>0;
     }
 

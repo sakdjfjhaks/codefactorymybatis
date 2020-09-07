@@ -22,12 +22,12 @@ public class ${table.tableNameUpperCamel}Controller {
     @Resource
     private ${table.tableNameUpperCamel}Service service;
 
-    @PostMapping(value = "/pages")
-    public BaseResponse pages(@RequestBody ${table.tableNameUpperCamel} ${table.tableNameLowerCamel}) {
-        PageHelper.startPage(${table.tableNameLowerCamel} .getStart(), ${table.tableNameLowerCamel} .getLength());
-        List<${table.tableNameUpperCamel}> list = service.pages(${table.tableNameLowerCamel});
-        return new BaseResponse(true, "获取成功", list, ((Page) list).getTotal());
-    }
+<#--    @PostMapping(value = "/pages")-->
+<#--    public BaseResponse pages(@RequestBody ${table.tableNameUpperCamel} ${table.tableNameLowerCamel}) {-->
+<#--        PageHelper.startPage(${table.tableNameLowerCamel} .getStart(), ${table.tableNameLowerCamel} .getLength());-->
+<#--        List<${table.tableNameUpperCamel}> list = service.pages(${table.tableNameLowerCamel});-->
+<#--        return new BaseResponse(true, "获取成功", list, ((Page) list).getTotal());-->
+<#--    }-->
 
 
     @PostMapping(value = "/getAll")

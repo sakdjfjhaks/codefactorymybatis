@@ -43,7 +43,7 @@
         <set>
 <#list colums as colum>
     <#if colum.columName!=key.columName >
-        <#if  colum.jdbcType != 'BIT' && colum.jdbcType != 'TIMESTAMP'&& colum.jdbcType != 'INTEGER'&& colum.jdbcType != 'DECIMAL'>
+        <#if  colum.jdbcType != 'BIT' && colum.jdbcType != 'TIMESTAMP'&& colum.jdbcType != 'Long'&& colum.jdbcType != 'DECIMAL'>
            <if test="${colum.columNameLowerCamel} != null and ${colum.columNameLowerCamel} !='' ">
               ${colum.columName} = #${r'{'}${colum.columNameLowerCamel},jdbcType=${colum.jdbcType}${r'}'}<#if colum_has_next>,</#if>
            </if>
@@ -53,7 +53,7 @@
               ${colum.columName} = #${r'{'}${colum.columNameLowerCamel},jdbcType=${colum.jdbcType}${r'}'}<#if colum_has_next>,</#if>
            </if>
         </#if>
-        <#if  colum.jdbcType == 'INTEGER'>
+        <#if  colum.jdbcType == 'Long'>
            <if test="${colum.columNameLowerCamel} != null ">
               ${colum.columName} = #${r'{'}${colum.columNameLowerCamel},jdbcType=${colum.jdbcType}${r'}'}<#if colum_has_next>,</#if>
            </if>
