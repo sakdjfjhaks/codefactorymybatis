@@ -41,6 +41,7 @@ public class ${table.tableNameUpperCamel}Service {
     * @return 实例对象
     */
     public ${table.tableNameUpperCamel} add(${table.tableNameUpperCamel} ${table.tableNameLowerCamel}){
+        ${table.tableNameLowerCamel}.set${table.tableNameUpperCamel}Id()(SnowFlakeId.generateID());
         ${table.tableNameLowerCamel}.setCreateTime(Calendar.getInstance().getTime());
         this.dao.add(${table.tableNameLowerCamel});
         return  this.getById(${table.tableNameLowerCamel}.get${table.tableNameUpperCamel}Id());
